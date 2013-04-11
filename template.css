@@ -19,7 +19,7 @@ body {
 	font-family:Verdana, Geneva, sans-serif;
 	
 	}
-	body#mysite { 
+	body { 
 		/* Set background image POSITION and REPEAT here! */
 		background: #add1d6;	
 		bottom:	
@@ -322,15 +322,15 @@ a:focus {
 /* logo */
 
 #logo {
-  font-size: 35px;
   padding: 25px 0;
-  text-align:left;
-  text-transform: uppercase;
 }
-	
-#logo a, #logo a:hover {
+/* add logo font styling here */
+#logo a, #logo a:hover, #logo a div, #logo a:hover div {
 	text-decoration:none;
 	color:#333;
+	text-align:left;
+  	text-transform: uppercase;
+    font-size: 35px;
 	}
 		
 /* Phone */
