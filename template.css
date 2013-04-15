@@ -334,14 +334,18 @@ a:focus {
 	}
 		
 /* Phone */
+/* positioning and box model styling go here */
 #phone-number {
+	padding:15px 0px;
+	}
+/* font styling goes here */
+#phone-number div {
 	font-size: 25px;
 	line-height: 35px;
 	text-align:right;
 	text-transform:uppercase;
 	color:#666;	
-	padding:15px 0px;
-	}
+}
 	
 #m-phone-number {display:none;}	
 
@@ -751,6 +755,19 @@ div#copyright br {
 			}
      }			
 
+/* 10 b. Form Styling */
+
+label {}
+input[type="text"] {}
+input[type="text"]:focus {} 
+select {}
+select option {}
+textarea {}
+input[type="submit"] {}
+
+
+
+
 /* 11.WEBSPLANET DEFAULT */
 
 
@@ -765,7 +782,7 @@ div#copyright br {
 
 /* Widgets */
 
-.widget-wrapper {margin: 10px 10px 20px;}
+.widget-wrapper {margin: 10px 15px 20px;}
 .widget-title {}
 .widget-body {}
 .diy-widget {min-height:25px;}
@@ -1150,6 +1167,16 @@ li.adress-block-field {
 	margin-right: 2%;
 	width: 48%;
 }
+/* Contact Form */
+.contact-us label {
+	padding-bottom: 0px;
+}
+.contact-us li {
+	margin-bottom: 6px;
+}
+.contact-us input[type="submit"] {
+	margin-top: 0px;
+}
 
 /* Calculators */
 div.calc-input-container input[type=text] { /* remove styled margin-bottom, it pushes sub-labels down */
@@ -1254,7 +1281,14 @@ div.unit-calc li.unit-menu ul.unit-type li a.active, div.unit-calc li.unit-menu 
 
 /* Payment Method Fixes */
 ul.PaymentMethod_widget  label {display:none;}
-li.checkboxPaymentMethod {margin: 0px 10px 0px 0px !important;}
+.PaymentMethod_widget .checkboxPaymentMethod span {
+	height: 40px;
+	width: 62px;
+}
+li.checkboxPaymentMethod {
+	margin: 0px !important;
+	width: 62px !important;
+}
 
 /* Guestbook fixes */
 .diy-guestbook-form input, .diy-guestbook-form textarea {
@@ -1393,7 +1427,7 @@ ul#FAQ_category_list span p span {
 
 /* --------------- end Websplanet module fixes --------------- */
 
-/* --------------- Default Site Callout Classes --------------- */
+/* --------------- Default Site Callout Classes --------------- 
 div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
 div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
 	width:45% !important;
@@ -1406,4 +1440,4 @@ div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inne
 		width:auto !important;
 		float:left !important;
 	}
-}
+}*/
