@@ -1041,7 +1041,8 @@ div.rss ul {
 }
 /* accordion and tabs break grid, this adds a margin to match other "widget-wrapper"s */
 div.diy-f-accordion,
-div.diy-f-tabs {
+div.diy-f-tabs,
+div.diy-f-spot {
 	margin: 10px 15px;
 }
 /* Accordian fixes */
