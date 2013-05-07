@@ -33,33 +33,33 @@ body {
 
 /* 2.HEADINGS */
 
-h1, h1 span, h1 font span,
-h2, h2 span, h2 font span, 
-h3, h3 span, h3 font span, 
-h4, h4 span, h4 font span, 
-h5, h5 span, h5 font span, 
-h6, h6 span, h6 font span {
+h1, h1 span, h1 font span, h1 div,
+h2, h2 span, h2 font span, h2 div,
+h3, h3 span, h3 font span, h3 div,
+h4, h4 span, h4 font span, h4 div,
+h5, h5 span, h5 font span, h5 div,
+h6, h6 span, h6 font span, h6 div {
 	font-weight:normal;
 	margin-bottom : 15px;
 	line-height: 120%;
 }
-h1, h1 span, h1 font span { 
+h1, h1 div, h1 span, h1 font span { 
 	font-size : 34px; 
 }
-h2, h2 span, h2 font span{ 	
+h2, h2 div, h2 span, h2 font span{ 	
 	font-size : 30px; 
 }
-h3, h3 span, h3 font span {	
+h3, h3 div, h3 span, h3 font span {	
 	font-size : 28px; 
 }
-h4, h4 span, h4 font span { 	
+h4, h4 div, h4 span, h4 font span { 	
 	font-size : 24px; 
 }
-h5, h5 span, h5 font span { 
+h5, h5 div, h5 span, h5 font span { 
 	font-size : 20px;  
 }
-h6, h6 span, h6 font span { 
-	font-size : 20px; 
+h6, h6 div, h6 span, h6 font span { 
+	font-size : 16px; 
 }
 
 /* 3.TYPOGRAPHY */
@@ -70,7 +70,6 @@ dl,
 address { 
 	margin-bottom : 15px; 
 	font-size : 14px; 
-	line-height:160%;
 	}
 	
 /* add text styling to divs as Websplanet loves to wrap text in divs throughout the platform, just don't include a margin */
@@ -154,10 +153,16 @@ dd {
 dt { 
 	font-weight : normal; 
 }
+/* box method styling here */
 blockquote  { 
 	margin : 0 0 1.5em 24px; 
 	padding-left : 24px; 
 	border-left : 1px solid rgb(200,200,200); /* hex code can be used here too */
+}
+/* font styling here */
+blockquote,
+blockquote div,
+blockquote p {
 	font-style : italic; 
 }
 blockquote:before, 
@@ -280,6 +285,10 @@ a:focus {
   	text-transform: uppercase;
     font-size: 35px;
 }
+/* positioning and box method styling */
+div.slogan {  }
+/* font styling */
+div.slogan, div.slogan div { }
 		
 /* Phone */
 /* positioning and box model styling go here */
@@ -696,6 +705,7 @@ input[type="password"],
 input[type="email"], 
 textarea {
 	width: 95%;
+	clear: left;
 }
 select {
 	width: 100%;	
@@ -915,6 +925,8 @@ a.m-click-phone, a.m-click-mail, a.m-click-map {
 	color: #ffffff;
 	padding: 0px 0px;
 	text-align:center;
+	background: #3b3b3b;
+	/* this is the background of quick nav. please do not add left and right borders. They will mess up the widths of the buttons and will not display correctly. */
 	background: -moz-linear-gradient( top, #a3a3a3 0%, #3b3b3b 50%, #242424 50%, #000000);
 	background: -webkit-gradient( linear, left top, left bottom, from(#a3a3a3), color-stop(0.50, #3b3b3b), color-stop(0.50, #242424), to(#000000));
 	-moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
@@ -1079,6 +1091,27 @@ li.adress-block-field {
 .contact-us input[type="submit"] {
 	margin-top: 0px;
 }
+div.formManagerFront select {
+	width: 100% !important;
+}
+@media only screen and (max-width: 767px) {
+	div.formManagerFront select {
+		max-width: 97.45% !important;
+	}
+}
+div.formManagerFront input[type=text],
+div.formManagerFront textarea {
+	width: 98.5% !important;
+}
+div.formManagerFront input[type=text] {
+	padding-top: 0px;
+}
+div.formManagerFront dd {
+	margin-bottom: 4px;
+}
+div.contactUsFront dd {
+	margin-bottom: 3px;
+}
 
 /* Calculators */
 div.calc-input-container input[type=text] { /* remove styled margin-bottom, it pushes sub-labels down */
@@ -1198,6 +1231,16 @@ li.checkboxPaymentMethod {
     clear: left;
     float: left;
 }
+.fancybox-inner * {
+	color: #666666;	
+}
+.fancybox-inner input[type=text],
+.fancybox-inner textarea {
+	width: 75%;	
+}
+.click2sms-popup-wrapper .click2sms-popup-form input {
+	width: 50px;
+}
 
 /* --------------- end Websplanet widget fixes --------------- */
 
@@ -1233,8 +1276,11 @@ li.checkboxPaymentMethod {
 div.Events_item {
 	padding: 0;
 }
-#FAQ_category_list li a,
-#FAQ_category_list li a:visited {
+div.Events_item_desc {
+	clear: both;
+}
+#FAQ_category_list > li > a,
+#FAQ_category_list > li > a:visited {
     background-color: red; /* replace with theme color */
     border-radius: 10px 10px 10px 10px;
     font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
@@ -1247,9 +1293,9 @@ div.Events_item {
     color: #fff;
     border: none;
 }
-#FAQ_category_list li a:hover,
-#FAQ_category_list li a:focus,
-#FAQ_category_list li a:active {
+#FAQ_category_list > li > a:hover,
+#FAQ_category_list > li > a:focus,
+#FAQ_category_list > li > a:active {
 	cursor:pointer;
 	box-shadow: 0 0 10px #000000 inset;
 	-webkit-box-shadow: 0 0 10px #000000 inset;
@@ -1319,3 +1365,6 @@ div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inne
 		float:left !important;
 	}
 }*/
+div.horizontal.callouts div.vertical div.diy-f-spot.callout p.figcaption {
+	display: none;	
+}
