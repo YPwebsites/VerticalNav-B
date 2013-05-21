@@ -1,8 +1,10 @@
-/*YP Vertical Framework B v2.1 - 4/4/2013
+/*YP Vertical Framework B v3 - 4/4/2013
 fixed calculators and typography 
 MODULE STYLING 4/4/2013
 Updated mobile menu 4/5/2013
 Markup-Cleanup 4/19/2013
+Consolidated widget-button class with the module buttons 5-09-2013
+changed logo, slogan, cta, phone css 5-09-2013
  */
 
 @import url("gfx/wp-skeleton.css"); /* Upload stylesheet to GFX folder */
@@ -12,8 +14,9 @@ header, footer, nav, section, article {display: block;}
 body {
 	margin: 0;
 	color: #000;
-	font-size : 100%/1.4;
-	font-family:Verdana, Geneva, sans-serif;
+	font-size : 14px;
+	line-height:160%;
+	font-family:Verdana, Geneva, sans-serif; /* Set default font styles here */
 }
 	body { 
 		/* Set background image POSITION and REPEAT here! */
@@ -70,6 +73,7 @@ dl,
 address { 
 	margin-bottom : 15px; 
 	font-size : 14px; 
+	line-height:160%;
 	}
 	
 /* add text styling to divs as Websplanet loves to wrap text in divs throughout the platform, just don't include a margin */
@@ -125,12 +129,11 @@ div {
 	div.diy-f-spot div.calc-input-container span {
 		color: black; /* Replace with theme specific "dark" text color */
 	}
-p, span, div {
-	line-height:160%;
-}	
+	
 ul, 
 ol { 
 	margin : 0 0 1.5em 24px; 
+
 	padding-left : 24px; 
 	list-style-position: outside;
 }
@@ -274,36 +277,46 @@ a:focus {
 }
 	
 /* logo */
-#logo {
-  padding: 25px 0;
+#logo-slogan {
+  padding: 20px 0px 20px;
 }
 /* add logo font styling here */
-#logo a, #logo a:hover, #logo a div, #logo a:hover div {
+a.logo, a.logo div  {
 	text-decoration:none;
 	color:#333;
 	text-align:left;
   	text-transform: uppercase;
-    font-size: 35px;
+    font-size: 37px;
+	
 }
 /* positioning and box method styling */
-div.slogan {  }
+.slogan {  }
 /* font styling */
-div.slogan, div.slogan div { }
+.slogan, .slogan div { line-height:140%; }
 		
 /* Phone */
 /* positioning and box model styling go here */
-#phone-number {
-	padding:15px 0px;
+#phone-cta{
+	 padding: 20px 0px 20px;
 }
 /* font styling goes here */
-#phone-number div {
+.phone-number  {
 	font-size: 25px;
-	line-height: 35px;
+	line-height: 30px;
 	text-align:right;
 	text-transform:uppercase;
 	color:#666;	
 }
-#m-phone-number {
+
+.tagline2, .tagline2 div  {
+	font-size: 25px;
+	line-height: 30px;
+	text-align:right;
+	text-transform:uppercase;
+	color:#666;	
+}
+
+#m-phone-cta {
 	display:none;
 }	
 
@@ -327,12 +340,15 @@ img#siteMainDynHeaderImage1 {
 }
 /* All Mobile Sizes (devices and browser) */
 @media only screen and (max-width: 767px) {
-	#logo { 
+	#logo-slogan { 
 		text-align:center;   
 		padding:15px 0px;
 	}
-	#phone-number { 
-		text-align:center; 
+	a.logo, a.logo div {
+		text-align:center;
+		}
+	
+	#phone-cta { 
 		padding:0px 0px 10px;
 	}
 }
@@ -341,6 +357,17 @@ img#siteMainDynHeaderImage1 {
 	#sidebar {
 		display:none;
 	}
+	
+	a.logo, a.logo div {
+		text-align:center;
+		} 
+		
+	#phone-cta { 
+		padding:0px 0px 10px;
+	}	
+	
+	.tagline2, .tagline2 div, .phone-number { text-align:center;} 
+		
 	#content-container {
 		width:420px;
 		display:block;
@@ -364,6 +391,9 @@ img#siteMainDynHeaderImage1 {
 		width:300px;
 		display:block;
 	}	
+	
+	.tagline2, .tagline2 div, .phone-number { text-align:center;}
+	
 	#header-image-container {
 		margin-left:10px; 
 		margin-right:10px;
@@ -813,7 +843,10 @@ input[type="submit"] {}
     height:420px;
     display:inherit;
 }
-.widget-button{
+.widget-button, 
+#FAQ_category_list > li > a,
+#FAQ_category_list > li > a:visited,
+.jobs-apply a {
 	width:auto; 
 	height:30px; 
 	text-align:center; 
@@ -824,10 +857,18 @@ input[type="submit"] {}
     border-radius:10px;
 	background-color: #999;
 }
-div.widget-button:hover{
+div.widget-button:hover, 
+#FAQ_category_list > li > a:hover,
+#FAQ_category_list > li > a:focus,
+#FAQ_category_list > li > a:active,
+.jobs-apply a:hover,
+.jobs-apply a:active,
+.jobs-apply a:focus {
 	cursor:pointer;
 	background-color:#C60;
 }
+
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
     .widget-popup{
     	height: 300px;
@@ -982,7 +1023,6 @@ a.websplanet {
 	text-decoration: underline;
 }
 .footerLinks {
-    float: right;
     text-align: left;
 }
 .footerText {
@@ -1279,29 +1319,6 @@ div.Events_item {
 div.Events_item_desc {
 	clear: both;
 }
-#FAQ_category_list > li > a,
-#FAQ_category_list > li > a:visited {
-    background-color: red; /* replace with theme color */
-    border-radius: 10px 10px 10px 10px;
-    font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
-    font-size: 21px;
-    height: auto;
-    line-height: 40px;
-    text-align: center;
-    width: auto;
-    z-index: 1001;
-    color: #fff;
-    border: none;
-}
-#FAQ_category_list > li > a:hover,
-#FAQ_category_list > li > a:focus,
-#FAQ_category_list > li > a:active {
-	cursor:pointer;
-	box-shadow: 0 0 10px #000000 inset;
-	-webkit-box-shadow: 0 0 10px #000000 inset;
-	background: red; /* replace with theme color */
-    filter: progid:DXImageTransform.Microsoft.gradient( enabled=false );
-}
 ul#FAQ_category_list span {
 	margin: 0 12px 24px;
 }
@@ -1327,27 +1344,6 @@ div#jobs-module ul {
 	text-decoration: underline;
 }
 
-.jobs-apply a {
-    background-color: #E40A0A; /* replace with theme color */
-    border-radius: 10px 10px 10px 10px;
-    font-family: Verdana,arial,sans-serif;/* replace with theme fonts */
-    font-size: 16px;
-    height: auto;
-    line-height: 40px;
-    text-align: center;
-    width: 100%;
-    z-index: 1001;
-    color: #fff;
-    border: none;
-}
-.jobs-apply a:hover,
-.jobs-apply a:active,
-.jobs-apply a:focus {
-    cursor:pointer;
-	box-shadow: 0 0 10px #000000 inset;
-	-webkit-box-shadow: 0 0 10px #000000 inset;
-	background: #E40A0A; /* replace with theme color */
-}
 
 /* --------------- end Websplanet module fixes --------------- */
 
