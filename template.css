@@ -324,6 +324,7 @@ a.logo, a.logo div  {
 #header-image-wrapper-1 {
 	margin-top: 10px;
  	margin-bottom:10px;
+	line-height: 0;
 } /* WP wraps #siteMainDynHeaderImage1 with #header-image-wrapper-1 by defult but removes it once the image is replaced */
 
 img#siteMainDynHeaderImage1 { 
@@ -555,6 +556,7 @@ ul#nav {
 		-moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
 		-webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
 		box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 1px rgba(255,255,255,0.6);
+		background-color: #3b3b3b\9;
 	}	
 	#m-menu {
 		height: auto;
@@ -565,6 +567,7 @@ ul#nav {
 		z-index: 800;
 		display: block;
 		margin:0 auto;
+		line-height: 0;
 	}	
    #m-menu-content {
 		display: none; /* hides the menu */
@@ -752,6 +755,10 @@ select {}
 select option {}
 textarea {}
 input[type="submit"] {}
+.astrix, .required:after {
+	/* *********** THEME COLOR *********** */
+	color: red;
+}
 
 /* 11.WEBSPLANET DEFAULT */
 
@@ -866,6 +873,7 @@ div.widget-button:hover,
 .jobs-apply a:focus {
 	cursor:pointer;
 	background-color:#C60;
+	filter: none;
 }
 
 
@@ -1336,31 +1344,34 @@ div#jobs-module ul {
 	font-family: Verdana,arial,sans-serif; /* replace with theme fonts */
 	font-size: 24px;
 	padding-left: 0px;
-	color: #E40A0A; /* replace with theme color */
+	color: #E40A0A; /* ********** replace with theme color ********** */
+	filter: none;
 }
 .jobs-title a:hover,
 .jobs-title a:focus,
 .jobs-title a:active {
 	text-decoration: underline;
 }
+#jobs-module li .jobs-title a {
+	color:	#E40A0A; /* ********** replace with theme color ********** */
+}
 
 
 /* --------------- end Websplanet module fixes --------------- */
 
-/* --------------- Default Site Callout Classes --------------- 
-div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
-div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
-	width:45% !important;
-	float:left !important;
-}	
-	 
-@media screen and (max-width: 767px) {
-	div.horizontal.callouts div.vertical div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
-	div.horizontal.callouts div.vertical div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
-		width:auto !important;
-		float:left !important;
-	}
-}*/
-div.horizontal.callouts div.vertical div.diy-f-spot.callout p.figcaption {
+/* --------------- Default Site Callout Classes --------------- */
+div.diy-f-spot.callout1 p.figcaption,
+div.diy-f-spot.callout2 p.figcaption {
 	display: none;	
+}
+div.diy-f-spot.callout1 div.image_wrapper,
+div.diy-f-spot.callout2 div.image_wrapper {
+	/* ********** add strokes and other styles here and not on <img> ********** */
+	line-height: 0;	
+}
+@media screen and (max-width: 767px) {
+	div.diy-f-spot.callout1 div.diy-f-spot-inner div.widget-wrapper,
+	div.diy-f-spot.callout2 div.diy-f-spot-inner div.widget-wrapper {
+		margin-bottom: 0 !important;
+	}
 }
